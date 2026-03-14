@@ -1,0 +1,161 @@
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  cursor: pointer;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--surface);
+  }
+}
+
+/* Question side */
+.questionSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.questionText {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+/* Answer side */
+.answerSide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.answerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.answerTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.answerText {
+  font-size: 13.5px;
+  color: #888888;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Difficulty Badges */
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-badge);
+}
+
+.badgeEasy {
+  color: var(--easy-text);
+  background: var(--easy-bg);
+  border: 1.5px solid var(--easy-border);
+}
+
+.badgeMedium {
+  color: var(--medium-text);
+  background: var(--medium-bg);
+  border: 1.5px solid var(--medium-border);
+}
+
+.badgeHard {
+  color: var(--hard-text);
+  background: var(--hard-bg);
+  border: 1.5px solid var(--hard-border);
+}
+
+.cardOpenEasy {
+  border-color: var(--easy-border);
+}
+
+.cardOpenMedium {
+  border-color: var(--medium-border);
+}
+
+.cardOpenHard {
+  border-color: var(--hard-border);
+}
+
+@media (max-width: 900px) {
+  .card {
+    min-height: 160px;
+    padding: 22px 20px;
+  }
+
+  .questionText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .card {
+    min-height: 140px;
+    padding: 20px 18px;
+  }
+
+  .questionText {
+    font-size: 15.5px;
+  }
+
+  .answerTitle {
+    font-size: 15px;
+  }
+
+  .answerText {
+    font-size: 13px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 3px 12px;
+  }
+}
